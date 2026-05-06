@@ -4,7 +4,6 @@ const memberList = document.getElementById("memberList");
 const staffList = document.getElementById("staffList");
 const memberCount = document.getElementById("memberCount");
 const staffCount = document.getElementById("staffCount");
-const updatedAt = document.getElementById("updatedAt");
 const template = document.getElementById("cardTemplate");
 
 main();
@@ -29,12 +28,10 @@ async function main() {
 
     memberCount.textContent = members.length;
     staffCount.textContent = staff.length;
-    updatedAt.textContent = "読み込み完了";
   } catch (error) {
     console.error(error);
-    updatedAt.textContent = "読み込み失敗";
-    memberList.innerHTML = `<div class="empty">CSVの読み込みに失敗しました。</div>`;
-    staffList.innerHTML = `<div class="empty">CSVの読み込みに失敗しました。</div>`;
+    memberList.innerHTML = `<div class="empty">表示に失敗しました。</div>`;
+    staffList.innerHTML = `<div class="empty">表示に失敗しました。</div>`;
   }
 }
 
@@ -65,7 +62,6 @@ function renderList(target, items, emptyText) {
 
   for (const item of items) {
     const node = template.content.cloneNode(true);
-    const card = node.querySelector(".card");
     const img = node.querySelector(".avatar");
     const name = node.querySelector(".name");
     const links = node.querySelector(".links");
@@ -78,25 +74,25 @@ function renderList(target, items, emptyText) {
 
     name.textContent = item.name;
 
-    addLink(links, "X", item.x);
-    addLink(links, "Twitch", item.twitch, true);
-    addLink(links, "YouTube", item.youtube, true);
-    addLink(links, "Kick", item.kick, true);
-    addLink(links, "Discord", item.discord, true);
+    addLink(links, '<i class="fa-brands fa-x-twitter"></i>', item.x, "x");
+    addLink(links, '<i class="fa-brands fa-twitch"></i>', item.twitch, "twitch");
+    addLink(links, '<i class="fa-brands fa-youtube"></i>', item.youtube, "youtube");
+    addLink(links, '<i class="fa-brands fa-kickstarter-k"></i>', item.kick, "kick");
+    addLink(links, '<i class="fa-brands fa-discord"></i>', item.discord, "discord");
 
     target.appendChild(node);
   }
 }
 
-function addLink(target, label, url, secondary = false) {
+function addLink(target, labelHtml, url, className = "") {
   if (!url) return;
 
   const a = document.createElement("a");
-  a.className = secondary ? "link secondary" : "link";
+  a.className = `link ${className}`.trim();
   a.href = url;
   a.target = "_blank";
   a.rel = "noopener noreferrer";
-  a.textContent = label;
+  a.innerHTML = labelHtml;
   target.appendChild(a);
 }
 

@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Members List</title>
+  <title>LegacyRust Members</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page">
     <section class="hero">
-      <p class="eyebrow">RUST SERVER</p>
+      <p class="eyebrow">LEGACY RUST</p>
       <h1>参加者・運営一覧</h1>
-      <p class="lead">Googleスプレッドシートから自動で読み込んで表示します。</p>
 
       <div class="stats">
         <div class="stat">
@@ -22,17 +22,12 @@
           <span id="staffCount">0</span>
           <small>運営</small>
         </div>
-        <div class="stat wide">
-          <span id="updatedAt">読み込み中</span>
-          <small>更新状態</small>
-        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <h2>運営</h2>
-        <p>type が staff の人を表示します。</p>
       </div>
       <div id="staffList" class="grid"></div>
     </section>
@@ -40,7 +35,6 @@
     <section class="section">
       <div class="section-head">
         <h2>参加者</h2>
-        <p>type が member の人を表示します。</p>
       </div>
       <div id="memberList" class="grid"></div>
     </section>
