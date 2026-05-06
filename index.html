@@ -5,24 +5,31 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LegacyRust Members</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=livefix3" />
+  <link rel="stylesheet" href="style.css?v=headerupgrade1" />
 </head>
 <body>
   <main class="page">
-    <section class="hero">
-      <p class="eyebrow">LEGACY RUST</p>
-      <h1>参加者・運営一覧</h1>
 
-      <div class="stats">
-        <div class="stat">
-          <span id="memberCount">0</span>
-          <small>参加者</small>
-        </div>
-        <div class="stat">
-          <span id="staffCount">0</span>
-          <small>運営</small>
-        </div>
+    <section class="hero">
+
+      <div class="hero-top">
+        <span class="mini-title">参加者リスト</span>
       </div>
+
+      <div class="hero-center">
+        <p class="eyebrow">STREAMER SERVER</p>
+
+        <h1 class="main-title">
+          LegacyRust
+        </h1>
+
+        <p class="hero-sub">
+          参加者: <span id="memberCount">0</span>
+          ／
+          運営: <span id="staffCount">0</span>
+        </p>
+      </div>
+
     </section>
 
     <section class="section">
@@ -38,12 +45,12 @@
       </div>
       <div id="memberList" class="grid"></div>
     </section>
+
   </main>
 
   <template id="cardTemplate">
     <article class="card">
       <div class="avatar-wrap">
-        <span class="live-badge">LIVE</span>
         <img class="avatar" src="" alt="" loading="lazy" />
       </div>
       <div class="card-body">
@@ -53,6 +60,6 @@
     </article>
   </template>
 
-  <script src="script.js?v=livefix3"></script>
+  <script src="script.js?v=headerupgrade1"></script>
 </body>
 </html>
