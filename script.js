@@ -45,8 +45,7 @@ function normalizeRow(row) {
     discord: getCell(row, "discord"),
     instagram: getCell(row, "instagram"),
     tiktok: getCell(row, "tiktok"),
-    website: getCell(row, "website"),
-    live: isLiveValue(getCell(row, "live"))
+    website: getCell(row, "website")
   };
 }
 
@@ -58,11 +57,6 @@ function getCell(row, key) {
     }
   }
   return "";
-}
-
-function isLiveValue(value) {
-  const v = clean(value).toLowerCase();
-  return v === "yes" || v === "true" || v === "1" || v === "live" || v === "配信中";
 }
 
 function clean(value) {
@@ -83,10 +77,6 @@ function renderList(target, items, emptyText) {
     const img = node.querySelector(".avatar");
     const name = node.querySelector(".name");
     const links = node.querySelector(".links");
-
-    if (item.live) {
-      card.classList.add("is-live");
-    }
 
     img.src = item.icon || defaultIcon(item.name);
     img.alt = item.name;
