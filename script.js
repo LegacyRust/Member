@@ -43,8 +43,9 @@ function normalizeRow(row) {
     youtube: getCell(row, "youtube"),
     kick: getCell(row, "kick"),
     discord: getCell(row, "discord"),
-    tiktok: getCell(row,"tiktok"),
-    instagram: getCell(row,"website"),
+    instagram: getCell(row, "instagram"),
+    tiktok: getCell(row, "tiktok"),
+    website: getCell(row, "website"),
     live: isLiveValue(getCell(row, "live"))
   };
 }
