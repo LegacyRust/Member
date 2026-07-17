@@ -43,6 +43,8 @@ function normalizeRow(row) {
     youtube: getCell(row, "youtube"),
     kick: getCell(row, "kick"),
     discord: getCell(row, "discord"),
+    tiktok: getCell(row,"tiktok"),
+    instagram: getCell(row,"website"),
     live: isLiveValue(getCell(row, "live"))
   };
 }
@@ -98,6 +100,9 @@ function renderList(target, items, emptyText) {
     addLink(links, '<i class="fa-brands fa-youtube"></i>', item.youtube, "youtube");
     addLink(links, '<i class="fa-brands fa-kickstarter-k"></i>', item.kick, "kick");
     addLink(links, '<i class="fa-brands fa-discord"></i>', item.discord, "discord");
+    addLink(links, '<i class="fa-brands fa-instagram"></i>', item.instagram, "instagram");
+    addLink(links, '<i class="fa-brands fa-tiktok"></i>', item.tiktok, "tiktok");
+    addLink(links, '<i class="fa-solid fa-globe"></i>', item.website, "website");
 
     target.appendChild(node);
   }
